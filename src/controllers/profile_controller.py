@@ -2,6 +2,7 @@ from log import log
 from app import app
 from auth import auth
 from models.profile import Profile
+from flask import jsonify
 
 # Routes
 @app.route('/')

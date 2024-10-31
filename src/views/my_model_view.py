@@ -1,6 +1,7 @@
 from config import config
 from auth import auth, AuthException
 from services.auth_service import validate_authentication
+from services.profile_service import isAdmin
 from flask import redirect
 from flask_admin.contrib.sqla import ModelView
 
@@ -14,7 +15,7 @@ class MyModelView(ModelView):
             password = None
 
         if username and password:
-            if validate_authentication(username, password) and username in config.administrators:
+            if validate_authentication(username, password) and isAdmin(username):
                 return True
             else:
                 raise AuthException('Not authenticated.')
