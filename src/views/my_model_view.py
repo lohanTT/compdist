@@ -1,4 +1,4 @@
-from app import app
+from config import config
 from auth import auth, AuthException
 from services.auth_service import validate_authentication
 from flask import redirect
@@ -14,7 +14,7 @@ class MyModelView(ModelView):
             password = None
 
         if username and password:
-            if validate_authentication(username, password) and username in app.config.get('ADMINISTRATORS'):
+            if validate_authentication(username, password) and username in config.administrators:
                 return True
             else:
                 raise AuthException('Not authenticated.')
