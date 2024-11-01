@@ -75,6 +75,8 @@ Execute o comando abaixo para iniciar a aplicação e o banco de dados:
 ```bash
 docker-compose up -d
 ```
+
+**Obs:** É importante salientar que o container do MySql tem um tempo considerável de estabilização. Aguardar estabilização.
 ## Uso da aplicação
 - Para acessar a funcionalidade de autenticação somente `localhost:8080`
 - Para acessar a funcionalidade de admin
